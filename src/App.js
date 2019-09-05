@@ -11,7 +11,9 @@ const App = () => {
   return (
     <>
       <nav>
-        <h1>dito | Compras</h1>
+        <h1>
+          dito <span>Compras</span>
+        </h1>
       </nav>
       <div className="container">
         <div className="container-compras">

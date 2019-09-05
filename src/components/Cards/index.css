@@ -1,3 +1,13 @@
+@media only screen and (max-width: 480px) {
+  .container-compras .compras-card {
+    display: flex;
+    flex-direction: row;
+    width: 410px;
+
+    margin: 18px 0;
+  }
+}
+
 .container-compras .compras-card {
   display: flex;
   flex-direction: row;
