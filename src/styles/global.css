@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font: 14px "Roboto", sans-serif;
+  background: #eff1fc;
+  color: #5c5c5c;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+ul {
+  list-style: none;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font: 10px "Roboto", sans-serif;
+  }
+}

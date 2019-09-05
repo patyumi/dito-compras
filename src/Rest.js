@@ -33,7 +33,7 @@ const Rest = () => {
       };
     }
     if (action.type === "MOUNTED") {
-      //console.log("Montei um objeto novo com: ", action.data);
+      console.log("Montei um objeto novo com: ", action.data);
       return {
         ...state,
         loading: false,
@@ -52,7 +52,7 @@ const Rest = () => {
     dispatch({ type: "REQUEST" });
     const res = await api.get("/events.json");
     if (res.status === 200) {
-      //console.log("Status = 200 >>", res.data.events);
+      console.log("Status = 200 >>", res.data.events);
 
       // Dados recuperados com sucesso
       setPlaces(filterType(res.data.events, "comprou"));
@@ -70,11 +70,18 @@ const Rest = () => {
 
       let id = find(item.custom_data, "key", "transaction_id").value;
       let timeStamp = Date.parse(item.timestamp);
+      let data =
+        item.timestamp.substring(8, 10) +
+        "/" +
+        item.timestamp.substring(5, 7) +
+        "/" +
+        item.timestamp.substring(0, 4);
+      let horas = item.timestamp.substring(11, 16);
       let loja = find(item.custom_data, "key", "store_name").value;
       let valorTotal = item.revenue;
       let compras = fetchProductId(products, id);
 
-      return { id, timeStamp, loja, valorTotal, compras };
+      return { id, timeStamp, data, horas, loja, valorTotal, compras };
     });
 
     // Ordena as lojas por ordem decrescente
