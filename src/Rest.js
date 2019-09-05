@@ -33,7 +33,7 @@ const Rest = () => {
       };
     }
     if (action.type === "MOUNTED") {
-      console.log("Montei um objeto novo com: ", action.data);
+      //console.log("Montei um objeto novo com: ", action.data);
       return {
         ...state,
         loading: false,
@@ -52,7 +52,7 @@ const Rest = () => {
     dispatch({ type: "REQUEST" });
     const res = await api.get("/events.json");
     if (res.status === 200) {
-      console.log("Status = 200 >>", res.data.events);
+      //console.log("Status = 200 >>", res.data.events);
 
       // Dados recuperados com sucesso
       setPlaces(filterType(res.data.events, "comprou"));
